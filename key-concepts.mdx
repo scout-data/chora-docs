@@ -1,0 +1,116 @@
+---
+title: Key concepts
+description: The Chora vocabulary, defined. Skim once to make the rest of these docs make sense.
+---
+
+Chora has two sides — a **hiring team** on one side, and the **scouts** they invite on the other. Everything below exists to connect those two sides around a hire.
+
+## The two sides
+
+<CardGroup cols={2}>
+  <Card title="Hiring team" icon="building">
+    The company doing the hiring. Posts roles, invites scouts, confirms hires, pays the scout fee. Works out of `/hiring`.
+  </Card>
+  <Card title="Scout" icon="user-plus">
+    An individual with a network, referring candidates. Shares role links, tracks their pipeline, gets paid when a hire lands. Works out of `/scouts`.
+  </Card>
+</CardGroup>
+
+## Core objects
+
+**Programme.** A hiring team's setup on Chora — the company name, logo, scouts, roles, and payout config, all bundled. One company = one programme. Scouts join programmes; they don't join Chora at large.
+
+**Role.** An open job the hiring team wants to fill. Scouts can only refer candidates to roles with status **Active** — closed roles still appear in referral history but can't accept new ones.
+
+**Share link.** A personal, trackable URL the scout copies from the Roles tab and sends to someone. Looks like `app.trychora.com/go/<role-slug>?ref=<scout-token>`. Every click, application, interview, and hire that comes through this link is attributed back to the scout who shared it.
+
+**Referral.** A candidate who's touched a scout's share link. Starts life as "Shared" and progresses through pipeline stages until it either lands as a Hire or ends as Rejected/Withdrawn.
+
+**Invite link.** Separate thing — this is what a hiring team sends to a *scout* so they can join the programme. Not to be confused with a share link.
+
+## Scout classes
+
+When a scout signs up, Chora classifies them automatically:
+
+| Class | How it's decided | How they're paid |
+|---|---|---|
+| **Internal** | Their email matches a domain the hiring team has verified (e.g. `@acme.com`) | Via the hiring team's payroll — Chora exports a CSV, the team runs payroll |
+| **External** | Any other email | Via Stripe Connect — scout adds their own bank details; Chora pays direct |
+
+Classification happens once at sign-up but can be changed by the hiring admin.
+
+## Pipeline stages
+
+A referral moves through these states, in order, as the hiring team progresses or rejects the candidate:
+
+<Steps>
+  <Step title="Shared">
+    Scout has shared the link. No one's clicked yet.
+  </Step>
+  <Step title="Clicked">
+    A candidate has opened the link. No application yet.
+  </Step>
+  <Step title="Applied">
+    The candidate submitted the role's application form.
+  </Step>
+  <Step title="Interviewing">
+    The hiring team is actively progressing them.
+  </Step>
+  <Step title="Offer out">
+    The team has made an offer. Awaiting candidate's decision.
+  </Step>
+  <Step title="Hired">
+    Candidate accepted. Scout fee is quoted but not yet paid.
+  </Step>
+  <Step title="Confirmed">
+    The hiring team has confirmed the hire — Chora charges the hirer's card and queues the scout payout.
+  </Step>
+</Steps>
+
+Two terminal states exist off the happy path:
+
+- **Rejected** — the hiring team isn't moving forward with the candidate.
+- **Withdrawn** — the candidate pulled out themselves.
+
+Neither triggers a payout.
+
+## Money terms
+
+**Scout fee.** The flat GBP amount the scout receives when their referral is confirmed as a hire. Set programme-wide as a default, or overridden per role. Quoted upfront to the scout — once a scout sees the fee on a role, that's the number they get.
+
+**Chora fee.** Platform fee the hiring team pays on top of the scout fee. **20% on the Free plan, 15% on Pro.** Charged alongside the scout fee the moment the hire is confirmed.
+
+**Hirer total.** Scout fee + Chora fee. The amount actually charged to the hiring team's card. A £500 scout fee on Free plan = £600 total charge.
+
+**Payout holding period.** Optional buffer the hiring team can set between confirming a hire and releasing the scout fee — useful as a safety net against cancelled offers or candidate no-shows. Defaults to 0 days (instant release).
+
+**Payout states**, as seen on `/scouts/payouts`:
+
+| State | Means |
+|---|---|
+| **Pending** | Hire confirmed, scout fee locked, waiting for Stripe to pick up the transfer |
+| **In transit** | Stripe has the transfer but hasn't settled it to the bank yet |
+| **Completed** | Money is in the scout's bank account |
+| **Failed** | Transfer bounced — usually bank details need updating |
+
+## Plans and capacity
+
+<CardGroup cols={2}>
+  <Card title="Free" icon="square-check">
+    **£0/month**<br/>
+    Up to 10 active scouts<br/>
+    20% Chora fee on each payout
+  </Card>
+  <Card title="Pro" icon="rocket">
+    **£99/month**<br/>
+    Unlimited scouts<br/>
+    15% Chora fee on each payout
+  </Card>
+</CardGroup>
+
+Upgrade or downgrade from [**/hiring/billing**](https://app.trychora.com/hiring/billing). Downgrade is blocked if you have more than 10 active scouts — deactivate some first.
+
+## What's next
+
+- [**For hiring teams**](/hirers/create-programme): set up a programme, add roles, invite scouts.
+- [**For scouts**](/scouts/join-programme): accept an invite, share links, get paid.

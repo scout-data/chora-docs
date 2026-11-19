@@ -22,7 +22,8 @@
           {
             "group": "Getting started",
             "pages": [
-              "introduction"
+              "introduction",
+              "key-concepts"
             ]
           },
           {
