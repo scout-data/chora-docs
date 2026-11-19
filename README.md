@@ -67,7 +67,7 @@ Serves on http://localhost:3000 with hot reload on every MDX save.
 ## Conventions
 
 - **Voice**: direct, second-person, no filler. "Click X, then do Y."
-- **Links**: internal cross-links use `/path/to/article` (no file extension). External links hit `app.trychora.com/...` directly.
+- **Links**: internal cross-links use `/path/to/article` (no file extension). External links hit `trychora.com/...` directly.
 - **Code**: fenced blocks with a language hint for syntax highlighting.
 - **Tables**: use for comparing concepts side-by-side (pricing tiers, scout classes, etc.).
 - **Images**: live under `/images/` once we have any. Reference as `/images/<name>.png`.

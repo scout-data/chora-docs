@@ -57,7 +57,7 @@
     "primary": {
       "type": "button",
       "label": "Open dashboard",
-      "href": "https://app.trychora.com"
+      "href": "https://trychora.com"
     }
   },
   "footer": {
