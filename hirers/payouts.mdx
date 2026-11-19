@@ -1,0 +1,49 @@
+---
+title: Payouts and billing
+description: Attach a card so scout fees can settle when you confirm a hire.
+---
+
+Chora charges your card the moment you confirm a hire. Until you add a payment method, hires stay in a **pending-charge** state — the scout sees "waiting on hirer" and no money moves.
+
+## Add a payment method
+
+1. Go to [**/hiring/billing**](https://app.trychora.com/hiring/billing).
+2. Click **Add payment method** — opens Stripe's hosted card form.
+3. Save. Returns you to the Billing page with your card on file.
+
+You can replace or remove the card any time via **Manage billing** (Stripe's hosted Customer Portal).
+
+## Confirming hires
+
+The scout fee + Chora platform fee are charged when you move a referral to **Hired → Confirmed**:
+
+1. Open [**/hiring/referrals**](https://app.trychora.com/hiring/referrals).
+2. Click a referral in the **Hired** stage to open the side drawer.
+3. Click **Confirm hire**.
+4. Chora charges your card and queues the scout payout.
+
+## Where scouts are paid
+
+| Scout class | Payout route |
+|---|---|
+| **External** scout | Stripe Connect transfer to their bank |
+| **Internal** scout (employee) | Payroll CSV export you send to your payroll provider |
+
+Scouts set up their own Stripe account on their side — you don't need to do anything beyond confirming the hire.
+
+## Invoices
+
+Every charge generates a Stripe invoice emailed to the account on file. You can also download them from the Customer Portal under **Billing history**.
+
+## Pricing
+
+| Plan | Scout cap | Chora fee | Price |
+|---|---|---|---|
+| **Free** | 10 active scouts | 20% of scout fee | £0/mo |
+| **Pro** | Unlimited scouts | 15% of scout fee | £99/mo |
+
+Upgrade or downgrade from [**/hiring/billing**](https://app.trychora.com/hiring/billing). Downgrade is blocked if you have more than 10 active scouts — deactivate some first.
+
+## Troubleshooting failed charges
+
+If Stripe fails to charge your card (expired, insufficient funds, 3DS block), the referral stays in **Hired** state — not Confirmed. Fix the payment method and click **Confirm hire** again. The scout isn't notified that the charge failed; they just see "waiting on hirer" until it goes through.

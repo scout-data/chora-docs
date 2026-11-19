@@ -1,0 +1,46 @@
+---
+title: Set scout fees
+description: Decide how much a scout earns when their referral lands a hire.
+---
+
+A **scout fee** is the flat amount Chora pays a scout the moment you confirm one of their referrals has been hired. You set it once as a programme default; you can override it per role.
+
+## Set the programme default
+
+1. Go to [**/hiring/rewards**](https://app.trychora.com/hiring/rewards).
+2. Enter an amount in **Default scout fee** (in GBP).
+3. Click **Save**.
+
+Every role you add from now on inherits this amount. Changes don't retroactively adjust fees quoted on referrals that have already been shared — once a scout sees a fee on a role, that's the amount they get if their person lands the job.
+
+## Per-role overrides
+
+For roles where you want a different fee (senior engineering roles, specialist positions), override the default:
+
+1. Open the role on [**/hiring/roles**](https://app.trychora.com/hiring/roles).
+2. Scroll to **Scout fee** and toggle **Use a custom amount**.
+3. Enter the role-specific fee and save.
+
+The scout dashboard surfaces role-specific fees clearly so scouts know which roles pay more.
+
+## How the fee math works
+
+When you confirm a hire:
+
+| Line item | Where it goes |
+|---|---|
+| **Scout fee (quoted)** | Transferred to the scout in full |
+| **Chora fee** | Platform fee — 20% (Free plan) or 15% (Pro plan) on top of the scout fee |
+| **Hirer total** | Scout fee + Chora fee, charged to your card |
+
+<Note>
+  The Chora fee is on top of the scout fee, not deducted from it. A £500 scout fee on Free plan costs you £600 total (£500 to the scout + £100 to Chora).
+</Note>
+
+## Payout timing
+
+Scout payouts leave Chora the moment you confirm the hire. You can set a **holding period** (e.g. 30 days after confirmation) if you want a buffer against cancelled offers or candidate no-shows. Configure it on [**/hiring/referrals**](https://app.trychora.com/hiring/referrals) under **Payout settings**.
+
+## Next step
+
+[Connect payment details →](/hirers/payouts)

@@ -1,0 +1,71 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Chora Help",
+  "description": "How to use Chora — for hiring teams and scouts.",
+  "colors": {
+    "primary": "#7C3AED",
+    "light": "#A78BFA",
+    "dark": "#6D28D9"
+  },
+  "favicon": "/favicon.svg",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg",
+    "href": "https://trychora.com"
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Help",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "introduction"
+            ]
+          },
+          {
+            "group": "For hiring teams",
+            "pages": [
+              "hirers/create-programme",
+              "hirers/add-roles",
+              "hirers/invite-scouts",
+              "hirers/set-scout-fees",
+              "hirers/payouts"
+            ]
+          },
+          {
+            "group": "For scouts",
+            "pages": [
+              "scouts/join-programme",
+              "scouts/share-role-links",
+              "scouts/track-referrals",
+              "scouts/setup-stripe",
+              "scouts/email-notifications"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "navbar": {
+    "links": [
+      { "label": "trychora.com", "href": "https://trychora.com" }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Open dashboard",
+      "href": "https://app.trychora.com"
+    }
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/trychora",
+      "linkedin": "https://linkedin.com/company/trychora"
+    }
+  },
+  "contextual": {
+    "options": ["copy", "view", "chatgpt", "claude"]
+  }
+}
