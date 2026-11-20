@@ -1,11 +1,11 @@
-# Chora Help Center
+# Scout Help Center
 
 Mintlify-powered docs site that becomes `help.trychora.com`.
 
 ## Structure
 
 ```
-chora-docs/
+scout-docs/
 ├── docs.json              # Mintlify config (nav, colors, logo, domain)
 ├── introduction.mdx       # Landing page
 ├── hirers/                # Articles for hiring teams
@@ -34,7 +34,7 @@ Install the Mintlify CLI once:
 npm i -g mintlify
 ```
 
-Then from inside `chora-docs/`:
+Then from inside `scout-docs/`:
 
 ```bash
 mintlify dev
@@ -44,7 +44,7 @@ Serves on http://localhost:3000 with hot reload on every MDX save.
 
 ## Deploy
 
-1. Push `chora-docs/` to its own GitHub repo (e.g. `trychora/chora-docs`), or keep it in this monorepo and set the Mintlify project's **root** to `chora-docs`.
+1. Push `scout-docs/` to its own GitHub repo (e.g. `trychora/scout-docs`), or keep it in this monorepo and set the Mintlify project's **root** to `scout-docs`.
 2. Sign up at [mintlify.com](https://mintlify.com) with the GitHub account that owns the repo.
 3. Install the Mintlify GitHub App on that repo.
 4. In the Mintlify dashboard: **Settings → Custom domain** → add `help.trychora.com`.

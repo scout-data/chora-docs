@@ -1,8 +1,8 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Chora Help",
-  "description": "How to use Chora, for hiring teams and scouts.",
+  "name": "Scout Help",
+  "description": "How to use Scout, for hiring teams and scouts.",
   "colors": {
     "primary": "#7C3AED",
     "light": "#A78BFA",

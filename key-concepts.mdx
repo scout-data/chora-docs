@@ -1,9 +1,9 @@
 ---
 title: Key concepts
-description: The Chora vocabulary, defined. Skim once to make the rest of these docs make sense.
+description: The Scout vocabulary, defined. Skim once to make the rest of these docs make sense.
 ---
 
-Chora has two sides: a **hiring team** on one side, and the **scouts** they invite on the other. Everything below exists to connect those two sides around a hire.
+Scout has two sides: a **hiring team** on one side, and the **scouts** they invite on the other. Everything below exists to connect those two sides around a hire.
 
 ## The two sides
 
@@ -18,7 +18,7 @@ Chora has two sides: a **hiring team** on one side, and the **scouts** they invi
 
 ## Core objects
 
-**Programme.** A hiring team's setup on Chora: the company name, logo, scouts, roles, and payout config, all bundled. One company = one programme. Scouts join programmes; they don't join Chora at large.
+**Programme.** A hiring team's setup on Scout: the company name, logo, scouts, roles, and payout config, all bundled. One company = one programme. Scouts join programmes; they don't join Scout at large.
 
 **Role.** An open job the hiring team wants to fill. Scouts can only refer candidates to roles with status **Active**. Closed roles still appear in referral history but can't accept new ones.
 
@@ -30,12 +30,12 @@ Chora has two sides: a **hiring team** on one side, and the **scouts** they invi
 
 ## Scout classes
 
-When a scout signs up, Chora classifies them automatically:
+When a scout signs up, Scout classifies them automatically:
 
 | Class | How it's decided | How they're paid |
 |---|---|---|
-| **Internal** | Their email matches a domain the hiring team has verified (e.g. `@acme.com`) | Via the hiring team's payroll. Chora exports a CSV, the team runs payroll |
-| **External** | Any other email | Via Stripe Connect. Scout adds their own bank details; Chora pays direct |
+| **Internal** | Their email matches a domain the hiring team has verified (e.g. `@acme.com`) | Via the hiring team's payroll. Scout exports a CSV, the team runs payroll |
+| **External** | Any other email | Via Stripe Connect. The scout adds their own bank details; Scout pays direct |
 
 Classification happens once at sign-up but can be changed by the hiring admin.
 
@@ -63,7 +63,7 @@ A referral moves through these states, in order, as the hiring team progresses o
     Candidate accepted. Scout fee is quoted but not yet paid.
   </Step>
   <Step title="Confirmed">
-    The hiring team has confirmed the hire. Chora charges the hirer's card and queues the scout payout.
+    The hiring team has confirmed the hire. Scout charges the hirer's card and queues the scout payout.
   </Step>
 </Steps>
 
@@ -78,9 +78,9 @@ Neither triggers a payout.
 
 **Scout fee.** The flat GBP amount the scout receives when their referral is confirmed as a hire. Set programme-wide as a default, or overridden per role. Quoted upfront to the scout. Once a scout sees the fee on a role, that's the number they get.
 
-**Chora fee.** Platform fee the hiring team pays on top of the scout fee. **20% on the Free plan, 15% on Pro.** Charged alongside the scout fee the moment the hire is confirmed.
+**Platform fee.** What the hiring team pays the platform on top of the scout fee. **20% on the Free plan, 15% on Pro.** Charged alongside the scout fee the moment the hire is confirmed.
 
-**Hirer total.** Scout fee + Chora fee. The amount actually charged to the hiring team's card. A £500 scout fee on Free plan = £600 total charge.
+**Hirer total.** Scout fee + Platform fee. The amount actually charged to the hiring team's card. A £500 scout fee on Free plan = £600 total charge.
 
 **Payout holding period.** Optional buffer the hiring team can set between confirming a hire and releasing the scout fee. Useful as a safety net against cancelled offers or candidate no-shows. Defaults to 0 days (instant release).
 
@@ -99,12 +99,12 @@ Neither triggers a payout.
   <Card title="Free" icon="square-check">
     **£0/month**<br/>
     Up to 10 active scouts<br/>
-    20% Chora fee on each payout
+    20% Platform fee on each payout
   </Card>
   <Card title="Pro" icon="rocket">
     **£99/month**<br/>
     Unlimited scouts<br/>
-    15% Chora fee on each payout
+    15% Platform fee on each payout
   </Card>
 </CardGroup>
 
